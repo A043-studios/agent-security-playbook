@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agentguard"
+version = "1.0.0"
+description = "Teaching implementation of security controls for tool-using AI agents (OWASP Agentic Top 10)."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Tim Gelzleichter, A+43 Studios" }]
+dependencies = []
+
+[project.urls]
+Homepage = "https://www.a043.xyz"
+Repository = "https://github.com/A043-studios/agent-security-playbook"
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

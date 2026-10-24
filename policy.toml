@@ -1,0 +1,28 @@
+# Security policy for the demo agent.
+# Policy lives in config, outside the model and outside the prompt:
+# it is reviewed like code and enforced by deterministic code (src/agentguard/guard.py).
+
+[profiles.inbox_summary]
+# Least privilege: summarising an inbox needs exactly two tools.
+allowed_tools = ["read_inbox", "send_email"]
+
+[profiles.inbox_triage]
+# A broader (riskier) profile, to show that the Rule of Two and the approval
+# gate still hold when least privilege is configured too generously.
+allowed_tools = ["read_inbox", "read_file", "send_email", "delete_emails", "fetch_url"]
+
+[egress]
+allowed_email_domains = ["yourcompany.example"]
+allowed_url_domains = ["yourcompany.example"]
+
+[approval]
+always_require = ["delete_emails"]
+
+[controls]
+rule_of_two = true
+sanitize_inputs = true
+filter_outbound = true
+
+[limits]
+max_tool_calls = 12
+max_calls_per_tool = 4
