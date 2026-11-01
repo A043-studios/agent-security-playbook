@@ -1,5 +1,7 @@
 # Agent Security Playbook: companion code
 
+> **This repository is the frozen artifact of Working Paper No. 2026-01, "When Agents Act"** (tag `paper-2026-01`). It stays as it is, so the paper's results remain reproducible. Development continues in [mcp-policy-gateway](https://github.com/A043-studios/mcp-policy-gateway), the one project behind the whole series.
+
 **Prompt injection can't be fixed inside the model. It has to be contained around it.**
 
 This repository is the reference implementation for the working paper
